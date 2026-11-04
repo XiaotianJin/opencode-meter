@@ -4,6 +4,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
 using System.Windows.Input;
+using System.Windows.Interop;
 using System.Windows.Media.Animation;
 using System.Windows.Threading;
 using OpenCodeMeter.App.Services;
@@ -37,6 +38,7 @@ public partial class MainWindow : Window
     private readonly DispatcherTimer _tickTimer = new();
     private readonly DispatcherTimer _hoverTimer = new();
     private readonly DispatcherTimer _collapseTimer = new();
+    private readonly DispatcherTimer _fullscreenTimer = new();
 
     private readonly AppSettings _settings;
     private ViewState _state = ViewState.Ball;
@@ -54,6 +56,8 @@ public partial class MainWindow : Window
     private double _dragStartLeft;
     private double _dragStartTop;
     private DateTime _suppressHoverUntil;
+    private DateTime? _fullscreenSince;
+    private bool _isHiddenForFullscreen;
     private int _animationToken;
 
     public MainWindow()
@@ -89,6 +93,9 @@ public partial class MainWindow : Window
             _collapseTimer.Stop();
             TryCollapse();
         };
+
+        _fullscreenTimer.Interval = TimeSpan.FromMilliseconds(500);
+        _fullscreenTimer.Tick += (_, _) => CheckFullscreen();
     }
 
     private void RestoreInitialGeometry()
@@ -158,6 +165,7 @@ public partial class MainWindow : Window
         _refreshTimer.Interval = TimeSpan.FromMinutes(_settings.RefreshMinutes);
         _refreshTimer.Start();
         _tickTimer.Start();
+        _fullscreenTimer.Start();
 
         Opacity = 0;
         BeginAnimation(
@@ -166,6 +174,13 @@ public partial class MainWindow : Window
             {
                 EasingFunction = new CubicEase { EasingMode = EasingMode.EaseOut },
             });
+
+        if (_settings.HideOnFullscreen &&
+            FullscreenDetector.IsForegroundFullscreen(new WindowInteropHelper(this).Handle))
+        {
+            _fullscreenSince = DateTime.UtcNow;
+            HideForFullscreen();
+        }
 
         _ = RefreshAsync();
     }
@@ -176,6 +191,7 @@ public partial class MainWindow : Window
         _tickTimer.Stop();
         _hoverTimer.Stop();
         _collapseTimer.Stop();
+        _fullscreenTimer.Stop();
         SaveSettings();
         _client.Dispose();
     }
@@ -422,6 +438,73 @@ public partial class MainWindow : Window
     }
 
     // ------------------------------------------------------------------
+    // fullscreen auto-hide
+    // ------------------------------------------------------------------
+
+    private void CheckFullscreen()
+    {
+        if (!_settings.HideOnFullscreen)
+        {
+            _fullscreenSince = null;
+            ShowFromFullscreenIfNeeded();
+            return;
+        }
+
+        // A drag owns the mouse; defer the decision until it ends.
+        if (_isDragging || _dragArmed)
+        {
+            _fullscreenSince = null;
+            return;
+        }
+
+        var handle = new WindowInteropHelper(this).Handle;
+        if (handle == IntPtr.Zero) return;
+
+        if (!FullscreenDetector.IsForegroundFullscreen(handle))
+        {
+            _fullscreenSince = null;
+            ShowFromFullscreenIfNeeded();
+            return;
+        }
+
+        _fullscreenSince ??= DateTime.UtcNow;
+        if (!_isHiddenForFullscreen &&
+            DateTime.UtcNow - _fullscreenSince.Value >= TimeSpan.FromMilliseconds(500))
+        {
+            HideForFullscreen();
+        }
+    }
+
+    private void HideForFullscreen()
+    {
+        if (_isHiddenForFullscreen) return;
+
+        if (_openMenu is { IsOpen: true })
+        {
+            _openMenu.IsOpen = false;
+        }
+
+        _hoverTimer.Stop();
+        _collapseTimer.Stop();
+
+        // Do not restore a stale hover card when the fullscreen app closes.
+        if (_state == ViewState.Expanded)
+        {
+            ApplyState(ViewState.Ball, animate: false);
+        }
+
+        _isHiddenForFullscreen = true;
+        Hide();
+    }
+
+    private void ShowFromFullscreenIfNeeded()
+    {
+        if (!_isHiddenForFullscreen) return;
+        _isHiddenForFullscreen = false;
+        Show();
+    }
+
+    // ------------------------------------------------------------------
     // dragging / docking
     // ------------------------------------------------------------------
 
@@ -628,6 +711,18 @@ public partial class MainWindow : Window
         {
             _settings.AlwaysOnTop = !_settings.AlwaysOnTop;
             Topmost = _settings.AlwaysOnTop;
+            SaveSettings();
+        }));
+
+        menu.Items.Add(CheckedItem("全屏应用时自动隐藏", _settings.HideOnFullscreen, () =>
+        {
+            _settings.HideOnFullscreen = !_settings.HideOnFullscreen;
+            _fullscreenSince = null;
+            if (!_settings.HideOnFullscreen)
+            {
+                ShowFromFullscreenIfNeeded();
+            }
+
             SaveSettings();
         }));
 

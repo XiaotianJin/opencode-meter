@@ -21,6 +21,7 @@ public sealed class AppSettings
     public bool ShowRemaining { get; set; } = true;
     public int RefreshMinutes { get; set; } = 3;
     public bool AlwaysOnTop { get; set; } = true;
+    public bool HideOnFullscreen { get; set; } = true;
 
     /// <summary>Last floating-ball position, in WPF device-independent units.</summary>
     public double? BallLeft { get; set; }
