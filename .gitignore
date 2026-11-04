@@ -9,3 +9,4 @@ windows/**/bin/
 windows/**/obj/
 windows/.vs/
 windows/**/*.user
+dist/
