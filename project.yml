@@ -1,0 +1,66 @@
+name: OpenCodeMeter
+options:
+  bundleIdPrefix: local.metax
+  deploymentTarget:
+    macOS: "14.0"
+  createIntermediateGroups: true
+
+settings:
+  base:
+    CODE_SIGN_IDENTITY: "-"
+    CODE_SIGNING_REQUIRED: YES
+    CODE_SIGNING_ALLOWED: YES
+    CODE_SIGN_STYLE: Manual
+    DEVELOPMENT_TEAM: ""
+    ENABLE_HARDENED_RUNTIME: NO
+    SWIFT_VERSION: "5.0"
+    MACOSX_DEPLOYMENT_TARGET: "14.0"
+
+targets:
+  OpenCodeMeter:
+    type: application
+    platform: macOS
+    sources:
+      - path: Sources
+      - path: Shared
+      - path: Widget/UsageWidgetView.swift
+      - path: Widget/UsageRingsView.swift
+    settings:
+      base:
+        PRODUCT_NAME: OpenCodeMeter
+        PRODUCT_BUNDLE_IDENTIFIER: local.metax.opencode-meter
+        INFOPLIST_FILE: Info.plist
+        GENERATE_INFOPLIST_FILE: NO
+        ENABLE_APP_SANDBOX: NO
+    dependencies:
+      - target: OpenCodeMeterWidget
+        embed: true
+        codeSign: true
+
+  OpenCodeMeterWidget:
+    type: app-extension
+    platform: macOS
+    sources:
+      - path: Shared
+      - path: Widget
+        excludes:
+          - Info.plist
+          - Widget.entitlements
+    settings:
+      base:
+        PRODUCT_NAME: OpenCodeMeterWidget
+        PRODUCT_BUNDLE_IDENTIFIER: local.metax.opencode-meter.widget
+        INFOPLIST_FILE: Widget/Info.plist
+        CODE_SIGN_ENTITLEMENTS: Widget/Widget.entitlements
+        GENERATE_INFOPLIST_FILE: NO
+        APPLICATION_EXTENSION_API_ONLY: YES
+        SKIP_INSTALL: YES
+        ENABLE_APP_SANDBOX: YES
+
+schemes:
+  OpenCodeMeter:
+    build:
+      targets:
+        OpenCodeMeter: all
+    run:
+      config: Release

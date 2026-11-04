@@ -1,0 +1,477 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0184CDDCFA873C54DF7B07CF /* SharedStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8036447C9AA6F41DF84AB46F /* SharedStore.swift */; };
+		03B13F02AE380D5984631689 /* UsageWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929605F3EA82F6A250A5A3D2 /* UsageWidgetView.swift */; };
+		07E48F2A3B88D1D1735F28B1 /* UsageWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929605F3EA82F6A250A5A3D2 /* UsageWidgetView.swift */; };
+		0B983C6E7C8F5B7B1313AD96 /* SharedStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8036447C9AA6F41DF84AB46F /* SharedStore.swift */; };
+		44D81BCD07845533E7E80E3F /* SettingsWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C483D70E1F1C3BFA5158E27B /* SettingsWindowController.swift */; };
+		86ACACA83C85474A811C5088 /* AppController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF81B2C0F35C95E478B36A8D /* AppController.swift */; };
+		8DF87E5A53D18CD49D93DF8C /* UsageRingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5EB3A6874B41D1DB596E7FB /* UsageRingsView.swift */; };
+		8F38B117E381493AC4178B2C /* UsageRingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5EB3A6874B41D1DB596E7FB /* UsageRingsView.swift */; };
+		9143D68EF37B083C4F94C3F5 /* WidgetMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B128BAE4BE3845A615C22DD /* WidgetMain.swift */; };
+		AD4E67D9341FD2A81FD14384 /* DebugTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15994989824C627ACE87C8CA /* DebugTools.swift */; };
+		C9981E1162095E6406B2AF91 /* UsageWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B41318F69E54F926BE5E6ED /* UsageWidget.swift */; };
+		D609F183BEB66563449C69C5 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6EAF3D454581CD074C76386 /* App.swift */; };
+		E436968525EDF87EBC6EA3BB /* UsageClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0194E4DD8321B4BDD828C393 /* UsageClient.swift */; };
+		E8979016E0915661A47AEF9A /* OpenCodeMeterWidget.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 55CC98519E35BB270CB5E6C3 /* OpenCodeMeterWidget.appex */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F288527090DA82B4DCC8F5C1 /* UsageClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0194E4DD8321B4BDD828C393 /* UsageClient.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A1329034BA86DDE1F6EF7B08 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1EB6B8CD6D7F3E342C0E5883 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 96BA55821967251831A8DFF3;
+			remoteInfo = OpenCodeMeterWidget;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		D1973FC3C47EA34FA517D0FA /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				E8979016E0915661A47AEF9A /* OpenCodeMeterWidget.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		0194E4DD8321B4BDD828C393 /* UsageClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsageClient.swift; sourceTree = "<group>"; };
+		15994989824C627ACE87C8CA /* DebugTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugTools.swift; sourceTree = "<group>"; };
+		30751269A265A477D9ACA047 /* OpenCodeMeter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenCodeMeter.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3B128BAE4BE3845A615C22DD /* WidgetMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetMain.swift; sourceTree = "<group>"; };
+		55CC98519E35BB270CB5E6C3 /* OpenCodeMeterWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = OpenCodeMeterWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		8036447C9AA6F41DF84AB46F /* SharedStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedStore.swift; sourceTree = "<group>"; };
+		929605F3EA82F6A250A5A3D2 /* UsageWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsageWidgetView.swift; sourceTree = "<group>"; };
+		9B41318F69E54F926BE5E6ED /* UsageWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsageWidget.swift; sourceTree = "<group>"; };
+		C483D70E1F1C3BFA5158E27B /* SettingsWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsWindowController.swift; sourceTree = "<group>"; };
+		C5EB3A6874B41D1DB596E7FB /* UsageRingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsageRingsView.swift; sourceTree = "<group>"; };
+		C6EAF3D454581CD074C76386 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
+		CF81B2C0F35C95E478B36A8D /* AppController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		1A15C19CFD922CD3A500EEF0 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				8036447C9AA6F41DF84AB46F /* SharedStore.swift */,
+				0194E4DD8321B4BDD828C393 /* UsageClient.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		355355BD9BB7323FDBD6840D /* Widget */ = {
+			isa = PBXGroup;
+			children = (
+				C5EB3A6874B41D1DB596E7FB /* UsageRingsView.swift */,
+				9B41318F69E54F926BE5E6ED /* UsageWidget.swift */,
+				929605F3EA82F6A250A5A3D2 /* UsageWidgetView.swift */,
+				3B128BAE4BE3845A615C22DD /* WidgetMain.swift */,
+			);
+			path = Widget;
+			sourceTree = "<group>";
+		};
+		75FAD9C5D56A2FD8AFB455A4 = {
+			isa = PBXGroup;
+			children = (
+				1A15C19CFD922CD3A500EEF0 /* Shared */,
+				9BC805329B2E58809226E12D /* Sources */,
+				355355BD9BB7323FDBD6840D /* Widget */,
+				EF208EB50CAD2EB940C40FC0 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9BC805329B2E58809226E12D /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				C6EAF3D454581CD074C76386 /* App.swift */,
+				CF81B2C0F35C95E478B36A8D /* AppController.swift */,
+				15994989824C627ACE87C8CA /* DebugTools.swift */,
+				C483D70E1F1C3BFA5158E27B /* SettingsWindowController.swift */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		EF208EB50CAD2EB940C40FC0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				30751269A265A477D9ACA047 /* OpenCodeMeter.app */,
+				55CC98519E35BB270CB5E6C3 /* OpenCodeMeterWidget.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		96BA55821967251831A8DFF3 /* OpenCodeMeterWidget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BDAC91490F2857A5F7766330 /* Build configuration list for PBXNativeTarget "OpenCodeMeterWidget" */;
+			buildPhases = (
+				4CB7BEA0F51CC78454181283 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OpenCodeMeterWidget;
+			packageProductDependencies = (
+			);
+			productName = OpenCodeMeterWidget;
+			productReference = 55CC98519E35BB270CB5E6C3 /* OpenCodeMeterWidget.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		F285FF085DCCFB851349C1B1 /* OpenCodeMeter */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3EB382CB54ECC64090FE8D57 /* Build configuration list for PBXNativeTarget "OpenCodeMeter" */;
+			buildPhases = (
+				815D57D7B694AD4C15DCE9FB /* Sources */,
+				D1973FC3C47EA34FA517D0FA /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F2677E027FE1024E0FE07C3B /* PBXTargetDependency */,
+			);
+			name = OpenCodeMeter;
+			packageProductDependencies = (
+			);
+			productName = OpenCodeMeter;
+			productReference = 30751269A265A477D9ACA047 /* OpenCodeMeter.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1EB6B8CD6D7F3E342C0E5883 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					96BA55821967251831A8DFF3 = {
+						DevelopmentTeam = "";
+						ProvisioningStyle = Manual;
+					};
+					F285FF085DCCFB851349C1B1 = {
+						DevelopmentTeam = "";
+						ProvisioningStyle = Manual;
+					};
+				};
+			};
+			buildConfigurationList = 18E265B20DDAE0FB62F58C6E /* Build configuration list for PBXProject "OpenCodeMeter" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 75FAD9C5D56A2FD8AFB455A4;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = EF208EB50CAD2EB940C40FC0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F285FF085DCCFB851349C1B1 /* OpenCodeMeter */,
+				96BA55821967251831A8DFF3 /* OpenCodeMeterWidget */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4CB7BEA0F51CC78454181283 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0B983C6E7C8F5B7B1313AD96 /* SharedStore.swift in Sources */,
+				F288527090DA82B4DCC8F5C1 /* UsageClient.swift in Sources */,
+				8F38B117E381493AC4178B2C /* UsageRingsView.swift in Sources */,
+				C9981E1162095E6406B2AF91 /* UsageWidget.swift in Sources */,
+				03B13F02AE380D5984631689 /* UsageWidgetView.swift in Sources */,
+				9143D68EF37B083C4F94C3F5 /* WidgetMain.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		815D57D7B694AD4C15DCE9FB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D609F183BEB66563449C69C5 /* App.swift in Sources */,
+				86ACACA83C85474A811C5088 /* AppController.swift in Sources */,
+				AD4E67D9341FD2A81FD14384 /* DebugTools.swift in Sources */,
+				44D81BCD07845533E7E80E3F /* SettingsWindowController.swift in Sources */,
+				0184CDDCFA873C54DF7B07CF /* SharedStore.swift in Sources */,
+				E436968525EDF87EBC6EA3BB /* UsageClient.swift in Sources */,
+				8DF87E5A53D18CD49D93DF8C /* UsageRingsView.swift in Sources */,
+				07E48F2A3B88D1D1735F28B1 /* UsageWidgetView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F2677E027FE1024E0FE07C3B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 96BA55821967251831A8DFF3 /* OpenCodeMeterWidget */;
+			targetProxy = A1329034BA86DDE1F6EF7B08 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		194E49C65E6715D6B2E29745 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_ALLOWED = YES;
+				CODE_SIGNING_REQUIRED = YES;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Manual;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = "";
+				ENABLE_HARDENED_RUNTIME = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		30C7EE09980A2E1F81A139B7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_ALLOWED = YES;
+				CODE_SIGNING_REQUIRED = YES;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Manual;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_HARDENED_RUNTIME = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		84A73589E7AF74A123A3AC15 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				ENABLE_APP_SANDBOX = NO;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "local.metax.opencode-meter";
+				PRODUCT_NAME = OpenCodeMeter;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		9E12077A0343775BE179D31C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				ENABLE_APP_SANDBOX = NO;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "local.metax.opencode-meter";
+				PRODUCT_NAME = OpenCodeMeter;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		F00A7643A3325E96A975E206 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_ENTITLEMENTS = Widget/Widget.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				ENABLE_APP_SANDBOX = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = Widget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "local.metax.opencode-meter.widget";
+				PRODUCT_NAME = OpenCodeMeterWidget;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		F48C4D4B94493D0C5D4023C4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_ENTITLEMENTS = Widget/Widget.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				ENABLE_APP_SANDBOX = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = Widget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "local.metax.opencode-meter.widget";
+				PRODUCT_NAME = OpenCodeMeterWidget;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		18E265B20DDAE0FB62F58C6E /* Build configuration list for PBXProject "OpenCodeMeter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				30C7EE09980A2E1F81A139B7 /* Debug */,
+				194E49C65E6715D6B2E29745 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		3EB382CB54ECC64090FE8D57 /* Build configuration list for PBXNativeTarget "OpenCodeMeter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9E12077A0343775BE179D31C /* Debug */,
+				84A73589E7AF74A123A3AC15 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		BDAC91490F2857A5F7766330 /* Build configuration list for PBXNativeTarget "OpenCodeMeterWidget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F00A7643A3325E96A975E206 /* Debug */,
+				F48C4D4B94493D0C5D4023C4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1EB6B8CD6D7F3E342C0E5883 /* Project object */;
+}
