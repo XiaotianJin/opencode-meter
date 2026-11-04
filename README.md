@@ -1,6 +1,18 @@
 # OpenCode 额度小组件
 
-> **Windows 版**：见 [`windows/README.md`](windows/README.md)。桌面悬浮球 + 三个同心进度环，悬停展开成长条卡片，拖到屏幕左右边缘会吸附成竖条。
+OpenCode Go 订阅额度的桌面小组件，提供 macOS 原生 WidgetKit 版和 Windows 悬浮球版。
+
+## Windows 版
+
+桌面悬浮球 + 三个同心进度环，悬停展开成长条卡片，拖到屏幕左右边缘会吸附成竖条。
+
+| 悬浮球 | 悬停展开 | 边缘吸附 |
+| --- | --- | --- |
+| <img src="windows/docs/ball.png" width="150" alt="Windows 悬浮球"> | <img src="windows/docs/card.png" width="360" alt="Windows 展开卡片"> | <img src="windows/docs/dock.png" width="90" alt="Windows 边缘吸附竖条"> |
+
+双击、右键菜单、刷新间隔等细节见 [`windows/README.md`](windows/README.md)。
+
+## macOS 版
 
 macOS **原生桌面小组件**（WidgetKit），在桌面右键 →「编辑小组件…」里搜索 “OpenCode” 添加，可自由拖动摆放。
 
@@ -19,13 +31,13 @@ macOS **原生桌面小组件**（WidgetKit），在桌面右键 →「编辑小
 
 两者共用同一套数据和设置。
 
-## 预览
+### 预览
 
 | 列表版（中号） | 圆环版（小号） |
 | --- | --- |
 | ![列表版](docs/preview-medium.png) | ![圆环版](docs/preview-rings.png) |
 
-## 组成
+### 组成
 
 ```
 OpenCodeMeter.app                  宿主 App（菜单栏常驻，无 Dock 图标）
@@ -36,7 +48,7 @@ OpenCodeMeter.app                  宿主 App（菜单栏常驻，无 Dock 图�
 - **宿主 App**：每 60 秒读取一次本机 OpenCode 服务，把登录凭证和最新额度镜像到小组件的沙盒容器里，并通知 WidgetKit 刷新时间线。菜单栏显示 5h 档的剩余百分比，点开可刷新、打开用量详情、查看添加小组件的步骤、退出。
 - **小组件扩展**：优先自己请求本地服务（即使宿主 App 没在运行也能刷新）；服务不可用时回退到宿主 App 留下的缓存，并标注「离线」。
 
-## 数据来源
+### 数据来源
 
 OpenCode 桌面端会在本机运行一个共享服务，并写一个注册文件：
 
@@ -76,7 +88,7 @@ Authorization: Basic base64("opencode:" + password)
 
 数据只在本机流转。
 
-### 宿主 App 与小组件如何共享数据
+#### 宿主 App 与小组件如何共享数据
 
 App Group 需要开发者 Team ID，这里改用普通用户目录 + 沙盒只读例外：
 
@@ -88,7 +100,7 @@ App Group 需要开发者 Team ID，这里改用普通用户目录 + 沙盒只�
 - 小组件通过 `com.apple.security.temporary-exception.files.home-relative-path.read-only` 只读该目录
 - 小组件自己也能请求本地服务，所以宿主 App 没运行时仍可刷新
 
-## 构建与安装
+### 构建与安装
 
 需要 **完整 Xcode**（不是只有 Command Line Tools）和 macOS 14+。
 
@@ -116,20 +128,20 @@ rm -rf ~/Library/Application\ Support/OpenCodeMeter
 defaults delete local.metax.opencode-meter 2>/dev/null || true
 ```
 
-## 添加小组件
+### 添加小组件
 
 1. 打开一次 `/Applications/OpenCodeMeter.app`（确认菜单栏出现百分比）
 2. 桌面空白处右键 →「编辑小组件…」
 3. 搜索 “OpenCode”，选小号或中号，拖到桌面
 4. 若列表里没有：重新运行 `./install.sh`，再打开一次 App
 
-## 打开设置
+### 打开设置
 
 - **菜单栏**：右上角有一个柱状图图标 + 当前 5h 剩余百分比（如 `97%`），点它展开菜单
 - **设置窗口**：双击 `/Applications/OpenCodeMeter.app`，或菜单里的「设置…」
 - 菜单栏图标被刘海、其它图标或 Bartender 之类工具挡住时，用设置窗口即可
 
-## 菜单可调项
+### 菜单可调项
 
 菜单和设置窗口内容一致：
 
@@ -141,13 +153,13 @@ defaults delete local.metax.opencode-meter 2>/dev/null || true
 
 设置写入 `state.json`，改动后立即通知 WidgetKit 刷新；宿主 App 的同步定时器也会按新间隔重排。
 
-## 刷新节奏
+### 刷新节奏
 
 - 默认 3 分钟，可在菜单里调整；小组件时间线按该间隔请求。
 - 宿主 App 按同一间隔同步，并在每次同步后主动 `reloadAllTimelines()`。
 - WidgetKit 仍会按系统预算调度，极端情况下可能被降频；倒计时是渲染时算出的静态文本，最多滞后一个周期。
 
-## 颜色规则
+### 颜色规则
 
 默认阈值：
 
@@ -159,7 +171,7 @@ defaults delete local.metax.opencode-meter 2>/dev/null || true
 
 阈值和三种颜色都可以在菜单里改。颜色同时作用于百分比数字和进度条（小号只有数字）。
 
-## 命令行调试
+### 命令行调试
 
 ```bash
 BIN=/Applications/OpenCodeMeter.app/Contents/MacOS/OpenCodeMeter
@@ -176,7 +188,7 @@ $BIN --snapshot ./out   # 渲染小号/中号/离线三张预览图
 OPENCODE_SERVICE_FILE=/tmp/fake-service.json $BIN --print
 ```
 
-## 已知限制
+### 已知限制
 
 - 依赖 OpenCode 桌面端正在运行；关闭后小组件显示「离线」并保留上次数据。
 - 首次添加小组件前需要启动过一次宿主 App（用于写入凭证）。
