@@ -3,3 +3,9 @@ DerivedData/
 xcuserdata/
 *.xcuserstate
 .DS_Store
+
+# Windows / .NET
+windows/**/bin/
+windows/**/obj/
+windows/.vs/
+windows/**/*.user

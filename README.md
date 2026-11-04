@@ -1,5 +1,7 @@
 # OpenCode 额度小组件
 
+> **Windows 版**：见 [`windows/README.md`](windows/README.md)。桌面悬浮球 + 三个同心进度环，悬停展开成长条卡片，拖到屏幕左右边缘会吸附成竖条。
+
 macOS **原生桌面小组件**（WidgetKit），在桌面右键 →「编辑小组件…」里搜索 “OpenCode” 添加，可自由拖动摆放。
 
 展示 OpenCode Go 订阅三档额度的**剩余百分比**和**重置倒计时**：
